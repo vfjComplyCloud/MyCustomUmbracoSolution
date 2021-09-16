@@ -4,7 +4,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyCustomUmbracoSolution.Handlers;
+using Umbraco.Cms.Core.Dashboards;
 using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Extensions;
 
 namespace MyCustomUmbracoSolution
@@ -40,11 +43,23 @@ namespace MyCustomUmbracoSolution
         public void ConfigureServices(IServiceCollection services)
         {
 #pragma warning disable IDE0022 // Use expression body for methods
-            services.AddUmbraco(_env, _config)
+            IUmbracoBuilder umbraco = services
+                .AddUmbraco(_env, _config)
                 .AddBackOffice()
                 .AddWebsite()
-                .AddComposers()
-                .Build();
+                .AddComposers();
+
+            umbraco.Dashboards().Remove<ContentDashboard>().Remove<SettingsDashboard>();
+
+            //The following 3 should result in "Active" being false
+            umbraco.AddNotificationHandler<ContentUnpublishedNotification, LogWhenUnpublishedHandler>()
+                   .AddNotificationHandler<ContentDeletedNotification, LogWhenDeletedFromSettingsHandler>()
+                   .AddNotificationHandler<ContentMovedToRecycleBinNotification, LogWhenMovedToRecycleBinHandler>()
+            //The following 2 should result in "Active" being true
+                   .AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()
+                   .AddNotificationHandler<ContentMovingNotification, LogWhenRestoredFromRecycleBinHandler>()
+                   .Build();
+
 #pragma warning restore IDE0022 // Use expression body for methods
 
         }
