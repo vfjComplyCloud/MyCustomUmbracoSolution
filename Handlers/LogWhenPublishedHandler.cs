@@ -1,8 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
+using MyCustomUmbracoLibrary;
+using MyCustomUmbracoLibrary.MetaModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Web;
 
@@ -26,39 +30,47 @@ namespace MyCustomUmbracoSolution.Handlers
             
             foreach (var publishedItem in notification.PublishedEntities)
             {
-                
-                int suggested = publishedItem.GetValue<int>("suggested");
-                _logger.LogCritical($"Suggested: {suggested} ");
+                IPublishedContent content = _context.Content.GetById(publishedItem.Id);
 
+                Type model = ModelRegister.MetaModels[content.ContentType.Alias];
 
-                string riskLevels = publishedItem.GetValue<string>("riskLevels");
-                Guid guid = Guid.Parse(riskLevels.Replace("umb://document/", ""));
-                var riskLevelNode = _context.Content.GetById(guid);
-                string result = (string)riskLevelNode.GetProperty("title_en").GetValue();
-                _logger.LogCritical($"Risk-Level: {result} ");
+                object item = Activator.CreateInstance(model);
 
+                foreach(PropertyInfo property in model.GetProperties())
+                {
+                    string alias = (string)model.GetNestedType("Fields").GetField(property.Name).GetValue(null);
+                    property.SetValue(item, content.GetProperty(alias).GetValue());
+                }
 
-                Type industries = publishedItem.GetValue<string>("industries").GetType();
-                _logger.LogCritical($"Industries: {industries} ");
+                //Umbraco.Cms.Web.Common.PublishedModels.ITsystem test = new();
 
+                var test = content.GetProperty(MetaITSystem.Fields.Suggested);
+                var test2 = test.GetType();
+                var test3 = test.GetValue();
 
+                var testA = content.GetProperty(MetaITSystem.Fields.RiskLevel);
+                var testA2 = testA.GetType();
+                IPublishedContent testA3 = (IPublishedContent)testA.GetValue();
 
-                string title_en = publishedItem.GetValue<string>("title_en");
-                _logger.LogCritical($"EnglishTitle: {title_en} ");
-
-                string title_da = publishedItem.GetValue<string>("title_da");
-                _logger.LogCritical($"DanishTitle: {title_da} ");
-
-
-
-                string descriptionEN = publishedItem.GetValue<string>("descriptionEN");
-                _logger.LogCritical($"EnglishDescription: {descriptionEN} ");
-
-                string descriptionDA = publishedItem.GetValue<string>("descriptionDA");
-                _logger.LogCritical($"DanishDescription: {descriptionDA} ");
+                //var testAB = content.GetProperty("industries");
+                //var testAB2 = testAB.GetType();
+                //var testAB3 = testAB.GetValue();
 
 
 
+
+                //var riskLevelObj = publishedItem.GetValue<object>("riskLevels");
+                //var props = publishedItem.Properties;
+
+                //var testing = _context.Content.GetById(1163);
+
+                //var industryIds = new List<Guid>();
+                //string[] industryList = publishedItem.GetValue<string>("industries").Split(',');
+                //foreach (var item in industryList)
+                //{
+                //    Guid industryId = Guid.Parse(item.Replace("umb://document/", ""));
+                //    industryIds.Add(industryId);
+                //}
 
                 //var qq = node.GetProperty("Suggested").GetValue();
 
