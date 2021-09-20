@@ -24,12 +24,6 @@
         <Content Remove="umbraco/mediacache/**" />
     </ItemGroup>
 
-
-
-    <ItemGroup>
-      <ProjectReference Include="..\MyCustomUmbracoLibrary\MyCustomUmbracoLibrary.csproj" />
-    </ItemGroup>
-
     <!-- Set this to true if ModelsBuilder mode is not InMemoryAuto-->
     <PropertyGroup>
         <RazorCompileOnBuild>false</RazorCompileOnBuild>

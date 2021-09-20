@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using MyCustomUmbracoLibrary;
-using MyCustomUmbracoLibrary.MetaModels;
+using MyCustomUmbracoSolution.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +8,7 @@ using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace MyCustomUmbracoSolution.Handlers
 {
@@ -32,53 +32,40 @@ namespace MyCustomUmbracoSolution.Handlers
             {
                 IPublishedContent content = _context.Content.GetById(publishedItem.Id);
 
-                Type model = ModelRegister.MetaModels[content.ContentType.Alias];
-
-                object item = Activator.CreateInstance(model);
-
-                foreach(PropertyInfo property in model.GetProperties())
+                switch(content)
                 {
-                    string alias = (string)model.GetNestedType("Fields").GetField(property.Name).GetValue(null);
-                    property.SetValue(item, content.GetProperty(alias).GetValue());
+                    case ProcessingActivity processingActivity:
+                        ProcessingActivityEntity processingActivityEntity = new(processingActivity);
+                        break;
+                    case PurposeOfProcessing purposeOfProcessing:
+                        PurposeOfProcessingEntity purposeOfProcessingEntity = new(purposeOfProcessing);
+                        break;
+                    case ITsystem itSystem:
+                        ItSystemEntity itSystemEntity = new(itSystem);
+                        break;
+                    case ErasurePolicy erasurePolicy:
+                        ErasurePolicyEntity erasurePolicyEntity = new(erasurePolicy);
+                        break;
+                    case PersonalData personalData:
+                        PersonalDataEntity personalDataEntity = new(personalData);
+                        break;
+                    case LegalBasis legalBasis:
+                        LegalBasisEntity legalBasisEntity = new(legalBasis);
+                        break;
+                    case RecipientCategory recipientCategory:
+                        RecipientCategoryEntity recipientCategoryEntity = new(recipientCategory);
+                        break;
+                    case CategoryOfDataSubject categoryOfDataSubject:
+                        CategoryOfDataSubjectEntity categoryOfDataSubjectEntity = new(categoryOfDataSubject);
+                        break;
+
+                    case ITest predefined:
+                        PredefinedEntity predefinedEntity = new(predefined);
+                        break;
+                    default:
+                        BaseEntity baseEntity = new(content);
+                        break;
                 }
-
-                //Umbraco.Cms.Web.Common.PublishedModels.ITsystem test = new();
-
-                var test = content.GetProperty(MetaITSystem.Fields.Suggested);
-                var test2 = test.GetType();
-                var test3 = test.GetValue();
-
-                var testA = content.GetProperty(MetaITSystem.Fields.RiskLevel);
-                var testA2 = testA.GetType();
-                IPublishedContent testA3 = (IPublishedContent)testA.GetValue();
-
-                //var testAB = content.GetProperty("industries");
-                //var testAB2 = testAB.GetType();
-                //var testAB3 = testAB.GetValue();
-
-
-
-
-                //var riskLevelObj = publishedItem.GetValue<object>("riskLevels");
-                //var props = publishedItem.Properties;
-
-                //var testing = _context.Content.GetById(1163);
-
-                //var industryIds = new List<Guid>();
-                //string[] industryList = publishedItem.GetValue<string>("industries").Split(',');
-                //foreach (var item in industryList)
-                //{
-                //    Guid industryId = Guid.Parse(item.Replace("umb://document/", ""));
-                //    industryIds.Add(industryId);
-                //}
-
-                //var qq = node.GetProperty("Suggested").GetValue();
-
-                //_logger.LogCritical($"Published date: {publishedItem.PublishDate} ");
-                //_logger.LogCritical($"TEST: {publishedItem.ContentType.Name} ");
-                //_logger.LogCritical(publishedItem.ContentType.IsElement.ToString());
-                //_logger.LogCritical(publishedItem.ContentType.IsContainer.ToString());
-                //_logger.LogCritical(publishedItem.ContentType.Key.ToString());
             }
         }
     }
