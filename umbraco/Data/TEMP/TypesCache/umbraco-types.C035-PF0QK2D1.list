@@ -601,3 +601,64 @@ uSync.BackOffice.SyncHandlers.Handlers.MemberTypeHandler, uSync.BackOffice, Vers
 uSync.BackOffice.SyncHandlers.Handlers.RelationTypeHandler, uSync.BackOffice, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null
 uSync.BackOffice.SyncHandlers.Handlers.TemplateHandler, uSync.BackOffice, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null
 
+Umbraco.Cms.Core.Models.PublishedContent.PublishedElementModel
+
+
+Umbraco.Cms.Core.Models.PublishedContent.PublishedContentModel
+
+Umbraco.Cms.Web.Common.PublishedModels.CategoriesOfDataSubjectsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.CategoriesOfRecipientsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.CategoryOfDataSubject, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.Chapter, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.CountriesFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.Country, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.CountryCategoriesFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.CountryCategory, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.Description, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.DocumentsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.ErasurePolicies, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.ErasurePoliciesFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.ErasurePolicy, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.File, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.Folder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.Image, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.IndustriesFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.Industry, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.ITsystem, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.ITsystemFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.LegalBasis, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.LegalBasisFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.Member, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.NotificationsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.Organization, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.OrganizationFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.OrganizationRole, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.OrganizationsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.OrganizationsRolesFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.PersonalData, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.PersonalDataFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.PredefinedEvent, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.PredefinedEventsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.PredefinedPeriod, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.PredefinedPeriodsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.ProcessingActivity, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.ProcessingActivityFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.Properties, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.PurposeOfProcessing, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.PurposesOfProcessingFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.RecipientCategory, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.RecordDefinition, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.RecordsDefinitionFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.RecordsDefinitionsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.RecordsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.RiskLevel, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.RiskLevelsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.SettingsFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.TasksFolder, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.Test, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.TitleSet, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.UmbracoMediaArticle, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.UmbracoMediaAudio, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.UmbracoMediaVectorGraphics, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Cms.Web.Common.PublishedModels.UmbracoMediaVideo, MyCustomUmbracoSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+
