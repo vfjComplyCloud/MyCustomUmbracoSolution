@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Web;
@@ -27,8 +26,9 @@ namespace MyCustomUmbracoSolution.Handlers
         }
 
         public void Handle(ContentPublishedNotification notification)
-        {            
-            foreach (IContent publishedItem in notification.PublishedEntities)
+        {
+            
+            foreach (var publishedItem in notification.PublishedEntities)
             {
                 IPublishedContent content = _context.Content.GetById(publishedItem.Id);
 
@@ -60,7 +60,7 @@ namespace MyCustomUmbracoSolution.Handlers
                         break;
 
                     case ITest predefined:
-                        //PredefinedEntity predefinedEntity = new(predefined);
+                        PredefinedEntity predefinedEntity = new(predefined);
                         break;
                     default:
                         BaseEntity baseEntity = new(content);
