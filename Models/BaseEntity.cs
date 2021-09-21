@@ -18,6 +18,13 @@ namespace MyCustomUmbracoSolution.Models
             Title = content.Name;
             Id = content.Key;
             MetaId = content.Id;
+            Validate();
+        }
+
+        private void Validate()
+        {
+            if (Title == null)
+                throw new ArgumentNullException($"{nameof(Title)}cannot be null");
         }
     }
 }
